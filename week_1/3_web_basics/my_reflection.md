@@ -15,6 +15,6 @@ by through the internet. The web is used for communication and sharing purposes 
 
 *  I got excited that my webpage was fully operation and had an 'aha' moment since I know DBC is going to be throwing tougher obstacles in the next challenege. 
 
-*  haha. Well my 'aha' moment was decribed in my last answer. 
+*  haha. Well my 'aha' moment was decribed in my last answer. Heopfully this is helpful :).
 
 *  Absolutely. I found numerous useful resources such as a sublime command I was able to run from my terminal so that I was able to access the file from my computer to sublime2 https://www.sublimetext.com/docs/2/osx_command_line.html which was easily my greatest discovery. Since I am using my terminal and not the github app I needed to push, so I needed some help from https://help.github.com/articles/pushing-to-a-remote. Also read over some documentary so I could utilize github much more efficiently http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository.
