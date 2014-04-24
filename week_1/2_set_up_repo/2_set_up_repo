@@ -8,3 +8,35 @@
 * Did you find any resources on your own that helped you better understand a topic? If so, please list it.
 
 <!-- Add your reflection here. Remove the comment markers -->
+
+* Once you've created a github account, on the top right hand corner there will be a +/- symbol click the down arrow then 
+select new repository. Once you create a repository the repository name must include your [username].github.io. Be certain
+that the Licensing choice is MIT and that the git is public. Finally click create. Once you've created the repository being 
+able to access it locally(from you computer) will be key. This is known as cloning. Cloning can be done by the github app
+or via Mac terminal (my choice). First open the terminal, type into the command line (~ indication of command not to be typed)
+~git init, this intializes a new repository and you're already logged on as the master from your terminal. Next type
+~ git clone git@github.com:[USERNAME]/[USERNAME].github.io.git. This will clonse your new repository locally. 
+
+* When running another programmers work all that is viewed will be the output, not the code itself. That is the beauty of 
+github it is known as an open source. Open source is when the source code is available to the viewer for changes as they 
+believe fit. 
+
+* Open source is an ingenious idea for the reason that it provides the foundation of work for young programmers like myself
+who are trying to ameliorate their programming knowledge. Providing the framework for me is essential for programming as I 
+like to see how other programmers work. Nervous? Not at all, I want to embrace the challenge. Okay who am I kidding maybe 
+a tad nervous when I know there is so much to learn. I enjoyed reading, 'The Giver' in high school, for those of you who 
+don't know its based off a utopian society. Anyways to say the least, open source doesn't compare, because of the control
+that the programmers have. 
+
+* Licensing is a very confusing topic because many believe they're relinquishing their work when in fact they still hold
+original copyright only they granting others to use the source code to for adjustments as that person deems necessary. In
+short licensing give permission to others to look and make changes to your work without having to ask special permission. On
+github this is quite prominent because of so many users and open source codes, everyone can contribute while the original 
+creator still gets credit.
+
+*Omg I love my 'ahah' moments, in fact I had one while reading this question :). I had an 'aha' moment because I was had 
+already successfully cloned my repository from my terminal, but kept repeating that step until I finally type the terminal
+command ~ ls to list my directories and saw my repository. Oh boy. Lesson learned. I solidified following directions
+carefully since I often miss a small piece of directions by trying to move to quickly. 
+
+*I used a github link http://stackoverflow.com/questions/4941090/cloning-git-repository-locally , but it wasn't too helpful. 
