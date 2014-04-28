@@ -6,17 +6,15 @@
 * Did you find any resources on your own that helped you better understand a topic? If so, please list it.
 
 <!-- Add your reflection here. Remove the comment markers -->
+* So far I understand that a majority of elements are blocks while the attributes are as inline blocks. Blocks elements begin a new line
+on a page, while occupying the full width. Inline blocks fall within the flow of the html doc and appear one the same line they were written. 
+What started off as trickey slowly made sense, but not till I was done writting the html doc. I believe I am struggling when it comes to 
+maring, border, padding, height, & width. I'm stil discovering how I can still correctly format the content after implementing the header, sidebars, and footer. I'm still utlizing all the sources available to me. 
 
-* Created a basic table in html to show date or represent whatever you would like is very straight forward. I also understand
-that at the beginning of each html file its starts with <!DOCTYPE html> and ends in </html>. I'm also confident with placing 
-my link for the filename.css within the <head> of the html code. I also an cool with using the h1-h6 naming scheme. 
-I'm very confident making a new website; howevever, I struggling with aligning images using differnt borders, images and header. 
+* What I like about html is the finished product. I'm not trying to have a fixed mind set about the idea of html, but the challange of memorizing the language
+has perturbed my 'aha' moments for the time being. Yet some way or another I am still embracing the challenge. I think once I bring together all of the components of html it will be a much smoother ride, but right now html hasn't been my friend on this project.
 
-* What seems awesome is that once I learn more about html I will be able to build a much more complex webpage. Html give you the 
-ability to build a website or web application, which is awesome! What seems bad is that once we get deeper into rails I know its
-going to be another language to learn merged with ruby and html. 
+* The only 'aha' moment I shared this time around is when I began rereading my reflection, I find it extremely helpful to know that i am kind of talking to someone who is going to take into consideration of my struggles. I definitely solidified the concept of the language, but still struggling with the framework
+of html
 
-*This project really got to be, but my 'aha' moment still kicked in once I realized I wasn't able to pull my file.html file from 
-github. Really simple concept but still gave me a smile. Plus I learned how to pull files from github and reset the master control. 
-
-*Not this time around. I utilized the webpages that we made available to me in the objectives. 
+* I love using the resource links that DBC has provided in each of the exercises. I find them to be hella helpful. Especially since the content is very specific to each goal we're attempting to complete. Seldomly did I go outside of the resources that had already been provided to me. Can't think of any I used. Stack Overflow is always a go to when I have questions, but that is pretty standard for me. 
