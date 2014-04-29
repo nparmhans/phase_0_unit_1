@@ -3,3 +3,5 @@
 Blog url: <!-- Blog URL here (remove comment)  -->
 
 Reflect on the process of researching and writing a blog post. It doesn't have to be long. Did you enjoy this? Did you get comments or views? Did you find the blog helpful to your learning? Did you find it cumbersome? Which parts did you feel best about and which did you feel less certain about?
+
+I felt as if the blog I implemented was more so motivated by the process of learned rather than soaking myself up in the art of what I had done, because it was a simple blog. I am not impressed with how the work came out. I want to learn more so that I am able to make this a legit project. However, I didn't learn much from this project than I when I start on exercise 6. Pretty much linking the projects as one. I haven't receieved any commenting yet, nor do I know if people have looked at the blog, but I anticipate I will get feedback from my accountability group as I have requested that they let me know where I can improve my work. I was uncertain about the comments, wasn't sure if I am suppose to add in a section that utilizes that technique since the only comments I know will likely be the emails. 
