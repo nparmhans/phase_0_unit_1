@@ -16,3 +16,16 @@
 
 * At some points I was struggling on how to print the text, because I was using an ASCII symbol with the single quotes ' ' when all I needed to do was use to " " quotes http://stackoverflow.com/questions/5160823/call-a-function-on-dom-ready-from-outside-head. Other than that I enjoy the resources that DBC has providede me with. Stack overflow is so legit though 8) Oh also tried to print a warning and I looked up the method https://developer.mozilla.org/en-US/docs/Web/API/console.warn
 
+* Strategies that keep working for me si time management and minimizing frustration. While these don't sounds like much of computer programming techniques it goes a long way when avoiding frustration and trying to stay focused at the problem(s) at hand. 
+
+* I kept asking myself when this sections was going to end! Seriously though, I often read through directions very quickly, but recently my new technique is to break off each part of the question and ask myself what those parts mean so that I am better able to answer the bigger question. Nothing specific this time around though, since I utilize this technique on an assiduous basis. 
+
+* I was having trouble trying to understand the quiz questions because I wasn't sure if DBC instructors are looking for simple and sweet responses or more in depth, so I provided both. 
+
+* I am gaining more and more confidence with my computer program learning competencies as the days go by. I really am trying to program every day so that this eventually becomes muscle memory. 
+
+* I learned how to utilize the chrome developer tools with more confidence. Before I was only able to edit the css tab; however, now I am running analysis to check web sites speed, looking at js language, and running js commands to the console. 
+
+* I most enjoyed the dev school coding videos. It's nice to be able to have someone explain information from time to time without always having to read so much. My eyes are killing me! 
+
+* For the first time I found the screen shots to be tedious in the quiz, but I did learn how to create a link for an image(screen shot) that I shot for my computer. So it wasn't entirely tedious but that's the closest I can get to saying something was tedious. 
