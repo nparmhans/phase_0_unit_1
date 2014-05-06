@@ -143,6 +143,7 @@
 // this.attackXY(48, 64);
 // this.attackXY(44, 50);
  
+// completed code combat challenges 
  
  
  
