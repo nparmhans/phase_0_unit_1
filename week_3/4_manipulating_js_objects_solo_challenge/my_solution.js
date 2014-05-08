@@ -59,7 +59,9 @@ var terah = {
 
 7. terah.children = {};
 
-8. terah.carson
+8. terah.children.carson = {name: "Carter"};
+
+
 
 
 
