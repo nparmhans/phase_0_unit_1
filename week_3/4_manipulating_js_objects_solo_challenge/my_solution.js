@@ -45,21 +45,30 @@ var terah = {
 
 // __________________________________________
 // Write your code below.
-1. var adam = {};
+var adam = {};
 
-2. var adam = {name: "Adam"};
+var adam = {name: "Adam"};
 
-3. terah.Spouse = "adam";
+terah = {spouse: adam};
 
-4. terah.weight = 125;
+terah.weight = 125;
 
-5. delete terah.eyeColor;
+delete terah.eyeColor;
 
-6. adam.spouse = "terah";
+adam.spouse = terah;
 
-7. terah.children = {};
+terah.children = {};
 
-8. terah.children.carson = {name: "Carter"};
+terah.children.carson = {name: "Carson"};
+
+terah.children.carter = {name: "Carter"};
+
+terah.children.colton = {name:"Colton"};
+
+adam.children = {};
+adam.children = terah.children
+
+
 
 
 
