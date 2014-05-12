@@ -34,5 +34,19 @@ function Median(x) {
 
 console.log(Median([1, 2, 3, 3, 5, 4]));
 
+//Reflection
+* The stategy that I keep utilizing is pomodoro technique. It is a solid strategy that has
+been consistently working for me and I love it. 
 
+* When I start to code and begin to use loops I like to ask myself what the program is doing
+once its starts running, rather function in this case. During which I am able to assess what
+the function does and what other components I maybe missing from the program. 
+
+* I learned a more efficent way of looping through a method. 
+
+* I am confident with my learning strategies in JS so far, but I still need some practice to solidify 
+my knowledge. 
+
+* I actually enjoyed the idea of having a group send multiple parts to one another and accomplishing 
+multiple tasks. Really awesome DBC!
 
