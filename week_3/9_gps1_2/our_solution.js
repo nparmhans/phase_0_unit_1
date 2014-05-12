@@ -49,4 +49,19 @@ will.showQuote = function() {
 
 
 //  Your Reflection:
+// * During the GPS I think a strategy that works very well which I consistently use is go by the DBC guidelines to start
+// off the GPS session. This allows all three parties to become comfortable together and break the ice. Consisting of those
+// guidelines is figuring out which personel will be the navigator and driver. After that its all uphill from there because
+// we're able to corroborate based on our position. During GPS I also like to make sure my partner is motivated and on point
+// with me, meaning if he is lagging behind I need to slow down or speed up. 
 
+// * During the coding session we discovered that when we ran our JS code in the terminal and it wasn't working. After which
+// we asked ourselves whats wrong with our code? I think this is the same question we have to keep proposing when coding because
+// when we stop asking questions either we're professional or we're not doing something correctly. 
+
+// * Sometimes I was struggling on understanding the question that the challenge wanted us to understand, so I read aloud to my
+// partner so that I was able to acheive two tasks, one see if he noticed what I missed or two try to catch my misunderstanding. 
+
+// * I am very confident with my learning competencies. 
+
+// * I always enjoy working on GPS. They're invigorating and advocating for the success of learning. 
