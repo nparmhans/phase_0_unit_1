@@ -1,0 +1,1376 @@
+/*--------------------------------------------------------------------------------
+WriteMaps Application Presentation Layer
+Author: Scott Jehl
+Updated: October 07
+Notes: 
+--------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------
+Global Styles
+------------------------------------------------------------------*/
+.header_menu{
+	height: 60px;
+	width: 650px;
+	float: right;
+	margin-top: -60px;}
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	outline: 0;
+	list-style: none;
+}
+body {
+	/*	background: #fff url(../images/bg_topGrad.jpg) top repeat-x;	*/
+	font-size: 62.5%;
+	/*	font-family: verdana, helvetica, arial, sans-serif;*/
+    font-family: "Open Sans",Arial,sans-serif;
+	color: #444;
+/*	margin: 20px 0px 0 0px;*/
+}
+a {     
+
+	color: #076EAD;
+}
+h2 {
+/*	float: left;*/
+	font-size: 1.3em;
+	line-height: 3em;
+	margin-right: 20px;
+	font-weight: normal;
+}
+h2 a {
+	text-decoration: underline;
+	font-weight: bold;
+}
+h3 {
+	margin: 0 0.5em 0;
+	font-weight: bold;
+	font-size: 1.6em;
+	line-height: 1.3em;
+/*	float: left;*/
+	padding-bottom: .3em;
+	width: auto;
+}
+h4 {
+	margin: 0;
+	font-size: 1.3em;
+	line-height: 1.3em;
+	clear: left;
+	padding-bottom: 0;
+/*	float: left;*/
+}
+p, li {
+	font-size: 1.3em;
+	line-height: 1.4em;
+}
+li {
+	font-size: 1em;
+	line-height: 1em;
+}
+
+
+/*------------------------------------------------------------------
+Header Styles
+------------------------------------------------------------------*/
+h1 {	
+	color: #3e3e3e;
+
+    vertical-align: baseline;
+	font-weight: 300;
+	font-family: "Open Sans",Arial,sans-serif;
+	font-size: 1.7em;
+
+}
+p#userMsg {
+	float:right;
+	position: relative;
+	z-index: 60000;
+	font-size: 1.1em;
+	margin-right: 20px;
+	margin-top: -60px;
+}
+p#userMsg a {
+	text-decoration: underline;
+}
+
+
+
+/*------------------------------------------------------------------
+My Maps Content styles
+------------------------------------------------------------------*/
+body#myMaps h3 {
+	font-size: 1.9em; 
+	margin: 2em 0 0 2em; 
+	color: #555; 
+	float: none;
+}
+p.settings_paragraph {
+	margin-left: 38px;
+}
+.form_contain h3 {
+	margin: 1em 0 0 2em !important;
+}
+body#myMaps div#mapNames {
+	display: block; 
+	/*	margin: 1em 4em; */
+	/*	float: left; */
+	/*	padding: 2em; */
+	/*	background: #ebf4f9; */
+	/*	border: 1px solid #eee; */
+	/*        width: 100em;*/
+	/*	width: 60%; */
+	height: 50em; 
+	overflow: auto;
+	/*        margin-top: 85px;*/
+}
+body#myMaps div#mapNames li {   
+	font-size: 1.8em; 
+	line-height: 0.2em;
+	padding-left: 20px; 
+	/*	padding-bottom: 2.5em; */
+	/*	background: url(../images/favicon.gif) 0 0 no-repeat;*/
+}
+body#myMaps div#mapNames li a {
+	/*	text-decoration: underline;*/
+}
+body#myMaps div#mapNames li .mapOptions { 
+	font-size: .85em; 
+}
+body#myMaps div#mapNames li .mapOptions a { 
+	color: #666;
+}
+body#myMaps div#secondaryOptions {
+	float: left; 
+	width: 50%; 
+	margin-top: 1em;
+}
+body#myMaps p.welcome {
+	margin: 0 3em;
+}
+body#myMaps p#secondaryLeadin {
+	font-size: 1.4em; 
+	font-weight: bold;
+}
+body#myMaps div#secondaryOptions h4 {
+	float: none; 
+	margin: 1em 0;
+}
+body#myMaps div#secondaryOptions h4 a {
+	background: #3397d1; 
+	padding: .4em 1em;
+	font-size: 1em; 
+	color: #fff; 
+	border: 1px solid #0a75bb; 
+	cursor: pointer;
+}
+
+/*------------------------------------------------------------------
+Application Canvas Styles
+------------------------------------------------------------------*/
+div#canvas {
+
+
+}
+div.canvasWrap_mb {
+	padding-left: 20px;
+	padding-right: 30px;
+/*	background:url(../images/bg_appCanvasTopRight.jpg) top right no-repeat;*/
+	/*	padding: 5px 20px;*/
+}
+
+.unshared {
+    margin-left:70px !important;
+/*    background:url(../images/bg_appCanvasTop.jpg) top left no-repeat;    */
+    width: auto;
+    
+}
+
+
+/*------------------------------------------------------------------
+Application Menu Styles
+------------------------------------------------------------------*/
+ul#appNav {
+	background: url(../images/bg_menuTile.jpg) repeat-x;
+	float: left;
+	margin-top: .5em;
+	margin-left: 10px;
+}
+ul#appNav:hover {
+	background-position: 0 -32px;
+}
+ul#appNav li {
+	float: left;
+	position: relative;
+	padding: 0 1em;
+	font-size: 1.3em;
+	line-height: 32px;
+	cursor: pointer;
+	border-right: 1px solid #eee;
+	z-index: 8000;
+}
+ul#appNav li:hover {
+	color: #111;
+}
+ul#appNav li.first {
+	background: url(../images/bg_menuLeftCap.gif) no-repeat 0 0;
+}
+ul#appNav li.last {
+	background: url(../images/bg_menuRightCap.gif) no-repeat right 0;
+	border: 0;
+}
+ul#appNav ul {
+	position: absolute;
+	top: -99999px;
+	left: -99999px;
+}
+ul#appNav ul li {
+	font-size: 1em;
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+	float: left;
+	clear: left;
+}
+ul#appNav li a  {
+	float: left;
+	line-height: 1.5em;
+	padding: .3em;
+	background: #fff;
+	text-decoration: none;
+	color: #444;
+	width: 13em;
+}
+ul#appNav li a:hover {
+	color: #eee;
+	background-color: #3397d1;
+}
+ul#appNav li.disabled, ul#appNav li.disabled a, ul#appNav li.disabled a:hover {
+	color: #aaa;
+	cursor: pointer;
+	background: #fff;
+}
+ul#appNav li.open ul {
+	top: 2.4em;
+	left: 0;
+	border: 1px solid #ddd;
+}
+
+/*------------------------------------------------------------------
+View and Mode Toggle Styles
+------------------------------------------------------------------*/
+div#viewToggles, div#modeToggles {
+	margin-left: 20px;
+	float: left;
+}
+div#viewToggles ul, div#modeToggles ul {
+	float: left;
+}
+div#viewToggles li, div#modeToggles li {
+	float: left;
+	width: 23px;
+	height: 23px;
+	margin: 8px 2px;
+	background: url(../images/btn_views.gif) 0 0 no-repeat;
+}
+div#viewToggles li a, div#modeToggles li a {
+	display: block;
+	width: 23px;
+	height: 23px;
+	text-indent: -9000px;
+}
+div#viewToggles li:hover, div#modeToggles li:hover {
+	background-position: 0 -23px;
+}
+ul.map li#mapView, ul.outline li#outlineView, ul.editing li#editingMode, ul.presentation li#presentationMode, ul.printing li#printMode {
+	background-position: 0 -46px;
+}
+li#mapView a {
+	background: url(../images/icon_mapView.gif) 50% 50% no-repeat;
+}
+li#outlineView a {
+	background: url(../images/icon_outlineView.gif) 50% 50% no-repeat;
+}
+div#modeToggles li#editingMode a {
+	background: url(../images/icon_editMode.gif) 50% 50% no-repeat;
+}
+div#modeToggles li#presentationMode a {
+	background: url(../images/icon_presentationMode.gif) 50% 50% no-repeat;
+}
+div#modeToggles li#printMode a {
+	background: url(../images/icon_printMode.gif) 50% 50% no-repeat;
+}
+div#zoomTool {
+	padding-top: 9px;
+	float: right;
+	width: 260px;
+	padding-right: 2px;
+	padding-left: 20px;
+	background: url(../images/appDivide.gif) bottom left no-repeat;
+	height: 3em;
+}
+div#zoomTool h3, div#viewToggles h3, div#modeToggles h3 {
+	float:left;
+	text-align: right;
+	font-size: 1.3em;
+	font-weight: normal;
+	line-height: 3em;
+}
+div#zoomTool div#area, div#zoomTool div#zoom {
+	height: 20px;
+	width: 200px;
+	background:url(../images/zoomBar.gif) 0 50% repeat-x;
+	float: right;
+	position: relative;
+	margin-top: 10px;
+}
+div#zoomTool #knob, div#zoomTool .ui-slider-handle {
+	height: 20px;
+	position: absolute;
+	width: 16px;
+	background:url(../images/zoomKnob.gif) 0 50% no-repeat;
+	cursor:pointer;
+}	
+
+
+
+
+
+/*------------------------------------------------------------------
+Application SiteMap Styles
+------------------------------------------------------------------*/
+div.map, div.outline {
+	background: white;
+	margin: 0;
+	clear: both;
+	overflow: auto;
+	font-family: Arial, sans-serif;
+	border-top: 1px solid #bbb;
+	width: 100%;
+	position: relative;
+}
+form {
+	margin: 3em;
+}
+fieldset {
+	border: 0;
+	margin: 0;
+}
+
+
+/*------------------------------------------------------------------
+Map View Structure Styles
+------------------------------------------------------------------*/
+
+div.map #sitemap {
+	margin: 0 auto;
+	position: relative;
+/*	left: 26em;*/
+	width: 100%;
+}
+div.map ul {
+	clear: left;
+	display: block;
+}
+div.map ul ul {
+	border-top: 1px solid #000;
+	width: auto;
+	margin: 2em 0 0 0.3em;
+	position: static;
+	display: block;
+
+}
+div.map ul ul.solo {
+	border-top: 0;
+}
+div.map li {
+	float: left;
+	list-style: none;
+	position: relative;
+
+}
+div.map li li {
+	margin: -1.3px 0 0 0;
+	/*margin: -3px 0 0 0;*/
+	overflow: hidden;
+}
+div.map li div.connectContain {
+	padding: 0 5px 3em 5px;
+	margin-bottom: -2em;
+}
+div.map ul.tempContain {
+	width: 10em;
+	height: 20em;
+}
+div.map li.tempPage {
+	width: 10em;
+	height: 20em;
+	position: relative;
+	float: left;
+	top: -20em;
+	left: -10em;
+	z-index: 999999999;
+}
+div.map li li div.connectContain {
+	padding: 2em 5px 5.5em 5px;
+	margin: 0 .3em -3em .3em;
+	height:13em;
+}
+div.map li li div.section {
+	padding: 2em 5px 4em 5px;
+}
+div.map li li div.first {
+	margin-left: 0;
+	height: 13em;
+}
+div.map li li div.last {
+	margin-right: 0;
+	height: 13em;
+}
+div.map li div.connectContain div.vLine {
+	position: absolute;
+	left: 50%;
+	width: 0;
+	margin-left: -1px;
+	top: 0;
+
+}
+
+div.map ul.solo li.root div.connectContain div.vLine div.line {
+	height: 12.8em;
+}
+
+div.map ul.solo li.root ul div.connectContain div.vLine div.line {
+	height: 12.8em;
+
+}
+div.map ul.solo li.root ul div.section div.vLine div.line {
+            height: 12.7em;
+}
+
+div.map li li div.first div.vLine div.line {
+	left: -9999em;
+	width: 9999em;
+	border-right: 1px solid #000;
+	background: white;
+}
+div.map li li div.last div.vLine div.line {
+	right: 0;
+	left: auto;
+	width: 9999em;
+	border-right: none;
+	border-left: 1px solid #000;
+	background: white;
+}
+div.map li div.connectContain div.vLine div.line {
+	position: relative;
+	left: 0;
+	width: 0;
+	border-right: 1px solid #000;
+	height: 13.8em;
+}
+div.map div.pageContain {
+	display: block;
+	background: white;
+	padding: .25em .5em .5em .5em;
+	color: #222;
+	text-decoration: none;
+	margin: 0 auto;
+	width: 8.7em;
+	height: 10em;
+	position: relative;
+	z-index: 1000;
+	text-align: left;
+}
+
+
+
+/*------------------------------------------------------------------
+Outline View Structure Styles
+------------------------------------------------------------------*/
+div.outline ul, div.outline ul ul {
+	float: none;
+	border-left: 1px dotted #444;
+	position: relative;
+}
+div.outline ul#sitemap {
+	border: 0;
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	padding: 1em 3em;
+}
+div.outline li {
+	list-style: none;
+	position: relative;
+	clear: left;
+	padding-top: 1.6em;
+	width: auto;
+}
+div.outline li li {
+	padding: 0.7em 0 0 3.5em;
+}
+div.outline li div.connectContain {
+	position: relative;
+}
+div.outline li div.connectContain div.vLine {
+	top: 0;
+	z-index: 0;
+}
+div.outline li div.vLine div.line {
+	position: absolute;
+	left: 0;
+}
+div.outline li li div.vLine div.line {
+	left: -3.5em;
+}
+div.outline li div.last div.vLine div.line, 
+div.outline li div.solo div.vLine div.line {
+	background: white;
+	height: 100em;
+	margin-left: -1px;
+}
+
+div.outline li div div.vLine div.line {
+	position: absolute;
+	width: 10em;
+	top: 1em;
+	border-top: 1px dotted #444;
+	background: none;
+}
+div.outline div.pageContain {
+	display: block;
+	background: white;
+	height: 2.5em;
+	position: relative;
+	color: #222;
+	text-decoration: none;
+	z-index: 2;
+	width: 20em;
+}
+
+
+/*------------------------------------------------------------------
+Inner Page Element Styles
+------------------------------------------------------------------*/
+
+input.titleText, textarea.titleText  {
+	color: #222;
+	border: none;
+	outline: none;
+}
+input.defaultText, textarea.defaultText {
+	color: #666;
+}
+input:focus, input.focus, textarea:focus, textarea.focus {
+	/*	margin-left: 3em;*/
+	z-index: 9999;
+	background: #FFF6C5;
+	/*	border: 1px solid #666;*/
+}
+
+div.page_meta {
+	display: none;
+	background: #fff;
+	border: 2px solid #999;
+	position: absolute;
+	padding: 10px;
+	z-index: 1000;
+	width: 350px;
+	text-align: left;
+	border-radius: 24px;
+}
+div.page_meta h4{
+    width: 100%;
+    word-wrap: break-word;
+} 
+div.page_meta label {
+	font-size: 1.1em;
+	font-weight: bold;
+	display: block;
+	margin: 0 0 .3em;
+	padding-top: 1em;
+	clear: both;
+}
+div.page_meta input, div.page_meta input:focus, div.page_meta input.focus, div.page_meta textarea, div.page_meta textarea:focus, div.page_meta textarea.focus {
+	/*width: 190px;
+	margin: 0;
+	background: #eee;
+	border: 2px solid #ddd;
+	padding: .2em;
+	font-size: 1.1em;
+	color: #555;
+	font-family: Verdana, sans-serif;*/
+	width: 336px;
+	margin: 0;
+	background: #FAFAFA;
+	border: 1px solid #BED8E2;
+	padding: 0.5em;
+	font-size: 1.2em;
+	color: #555;
+	font-family: Verdana, sans-serif;
+	border-radius: 3px;
+}
+div.page_meta textarea {
+	height: 6em;
+}
+div.page_meta input:focus, div.page_meta input.focus, div.page_meta textarea:focus, div.page_meta textarea.focus {
+	background: #fff;
+	color: #333;
+}
+div.page_meta a.openUrl {
+	position: absolute;
+	text-indent: -9999px;
+	display: block;
+	width: 18px; 
+	height: 18px;
+	background: url(../images/newWin.gif) 50% 50% no-repeat;
+	right: 1.6em;
+	top: 6.2em;
+	z-index: 99999;
+}
+div.page_meta h4 {
+	padding-bottom: .3em;
+}
+div.page_meta a.metaClose {
+	position: absolute;
+	top: 12px;
+	right: 2px;
+	padding: 12px;
+	background: url('..../images/close.png');
+	background-repeat: no-repeat;
+	/*background: #ddd;*/
+	/*padding: .5em;*/
+	color: #444;
+	font-weight: bold;
+	/*border-left: 1px solid #999;
+	border-bottom: 1px solid #999;*/
+	cursor: pointer;
+}
+
+
+/*sorting drop zone state*/
+.sortHover {
+	width: auto;
+	height: auto;
+	border: 2px dotted #fff !important;
+	margin-top: 1em;
+	background: url(../images/dropZone.gif) 50% 50% no-repeat;
+}
+#sitemap li li img.pageIcon {
+	cursor: move !important;
+}
+
+/*------------------------------------------------------------------
+Inner Page Element Styles: Map View
+------------------------------------------------------------------*/	
+div.map div.pageContain img {
+	width: 7.3em;
+	height: 8.9em;
+	position: absolute;
+	top: 0;
+	left: 1em;
+}
+div.map a {
+	font-size: 1em;
+	cursor: pointer;
+}
+div.map a.toggleSection {
+	text-indent: -9000px;
+	margin: 0;
+	width: 10px;
+	height: 2em;
+	display: block;
+	float: left;
+	cursor: pointer;
+}
+div.map a.metaToggle {
+	position: absolute;
+	top: 6em;
+	left: 3.5em;
+	text-indent: -9000px;
+	cursor: pointer;
+	z-index: 2;
+}
+div.map input.titleText, div.map div.safariWipe, div.map textarea.titleText {
+    
+	background: white;
+	width: 10em;
+	max-height: 3em;
+	overflow: hidden;
+	font-size: .8em;
+	margin-left: -1.8em;
+	text-align: center;	
+	position: absolute;
+	z-index: 50000;
+	font-weight: bold;
+	bottom: 0;
+}
+
+
+/*div.map input.titleText, div.map div.safariWipe, div.map textarea.titleText {
+	background: white;
+	top: 8.7em;
+	width: 9em;
+	height: 1em;
+	max-height: 3em;
+	overflow: hidden;
+	font-size: .8em;
+	margin-left: -1.8em;
+	text-align: center;	
+	position: absolute;
+	z-index: 50000;
+	font-weight: bold;
+	padding: .1em .2em .3em;
+	left: 2em;
+}*/
+
+div.map input:focus, div.map input.focus, div.map textarea:focus, div.map textarea.focus {
+	background: #FFE8B6;
+    z-index: 5000;
+}
+
+div.map a.deleteThis {
+	position: absolute;
+	top: 1.4em;
+	right: 4.2em;
+	text-indent: -9000px;
+	width: 0;
+	background-position: 0 0;
+	z-index: 2;
+}
+div.map a.deleteThis img {
+	width: 1.3em;
+	height: 1.3em;
+	border: 0;
+	left: 0;
+	top: 0;
+}
+div.map a.metaToggle img {
+	width: 1.6em;
+	height: 1.6em;
+	border: 0;
+	left: 0;
+	top: 0;
+}
+
+div.map a.addPage {
+	position: absolute;
+	top: 11em;
+	left: 50%;
+	margin-left: -1.1em;
+	width: 0;
+	z-index: 1000;
+}
+div.map a.addPage img {
+	position:absolute;
+	width: 2.4em;
+	height: 2.4em;
+	border: 0;
+	left: 0;
+	top: 2em;
+}
+div.map li li a.addPage {
+	top: 11em;
+}
+div.map li li div.first a.addPage {
+	left: 48%;
+}
+div.map a.toggleSection {
+	top: 6em;
+	position: absolute;
+	left: 2em;
+	z-index: 1000;
+}
+div.map a.toggleSection img {
+	width: 1.6em;
+	height: 1.6em;
+	border: 0;
+	left: 0;
+}
+div.map a.sectionCol {
+}
+div.editing a.toggleSection, a.sectionCol {
+	background-position: 50% 50%;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+Inner Page Element Styles: Outline View
+------------------------------------------------------------------*/	
+
+div.outline div.pageContain img {
+	width: 2.3em;
+	height: 2.8em;
+	position: absolute;
+	top: -.4em;
+	left: -1.1em;
+	z-index: 2;
+}
+div.outline a {
+	font-size: 1em;
+	cursor: pointer;
+	z-index: 2;
+}
+div.outline input.titleText, div.outline div.safariWipe, div.outline textarea.titleText {
+        max-height: 21px;
+	background: white;
+	top: 0;
+	font-size: .8em;
+	margin-left: .9em;
+	text-align: left;
+	margin-top: 0;
+	font-weight: bold;
+	padding: .1em .2em .3em;
+	width: 20.8em;
+	z-index: 2;
+}
+div.outline div.safariWipe {
+	position: absolute;
+	border-top: .4em solid white;
+	border-bottom: .8em solid white;
+	border-left: .6em solid white;
+	border-right: .9em solid white;
+   	height: .8em;
+   	background: none;
+	margin-left: .5em;
+	width: 40em;
+}
+div.outline input:focus, div.map input.focus, div.outline textarea:focus ,div.map textarea.focus {
+	background: #FFE8B6;
+	z-index: 5000!important;
+}
+div.outline a.deleteThis {
+	position: absolute;
+	top: 0;
+	left: .05em;
+	text-indent: -9000px;
+	width: 0;
+	background-position: 0 0;
+	z-index: 3;
+}
+div.outline a.deleteThis img {
+	width: .8em;
+	height: .8em;
+	border: 0;
+	left: 0;
+	top: 0;
+}
+div.outline a.metaToggle {
+	position: absolute;
+	top: 1em;
+	left: -.7em;
+	z-index: 3;
+}
+div.outline a.metaToggle img {
+	width: 1em;
+	height: 1em;
+	border: 0;
+	left: 0;
+	top: 0;
+}
+div.outline li a.addPage {
+	position: absolute;
+	top: 2.1em;
+	left: .6em;
+	z-index: 100;
+}
+div.outline li li a.addPage {
+	left: 4.1em;
+}
+div.outline a.addPage img {
+	width: 1.6em;
+	height: 1.6em;
+	border: 0;
+	top: 0;
+	right: 0;
+}
+div.outline a.toggleSection {
+	top: .7em;
+	position: absolute;
+	left: -2.5em;
+	z-index: 100;
+}
+div.outline a.toggleSection img {
+	width: 1.5em;
+	height: 1.5em;
+	border: 0;
+	left: 0;
+}
+
+
+div.presentation #sitemap a {
+	display: none;
+}
+
+
+
+/*------------------------------------------------------------------
+Footer Styles
+------------------------------------------------------------------*/	
+#footer {
+        padding-left: 20px;
+}
+body#myMaps #footer {
+	/*clear: both;*/
+/*	margin-top: 4em;
+	border-top: 1px solid #eee;*/
+}
+body#myMaps #footer li {
+	font-size: 1em;
+}
+#footer p {
+	display: inline;
+	font-size: 1.1em;
+	line-height: 2.5em;
+}
+#footer a {
+	text-decoration: underline;
+}
+#footer ul, #footer li {
+	display: inline;
+}
+#footer li {
+	font-size: 1em;
+	border-left: 1px solid #444;
+	padding-left: .6em;
+	padding-right: .3em;
+}
+#footer li.last {
+	border: 0;
+}
+
+
+
+/*------------------------------------------------------------------
+Modal Content Styles
+------------------------------------------------------------------*/
+p#initLoader {
+	width: 125px;
+	height: 15px;
+	background: url(../images/ajax-loader.gif) no-repeat;
+	position: absolute;
+	left: 50%;
+	margin-left: -60px;
+	margin-top: 100px;
+	padding-top: 110px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	z-index: 80000;
+}
+p#alertUser {
+	color: #444;
+	border: 2px solid #666;
+	width: 400px;
+	padding: 40px;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	margin-left:-200px;
+	background: #fff;
+	z-index: 80000;
+}
+p#alertUser strong {
+	color: red;
+}
+p#alertUser a {
+	text-decoration: underline;
+}
+
+
+div#modalBox {
+	width: 500px;
+	margin: 100px auto;
+	position: relative;
+	z-index: 80000;
+}
+div#mbHeader {
+	padding: 0 15px 8px;
+	height: 27px;
+	background: url(../images/bg_modalBox_header.png) 0 top no-repeat;
+}
+div#mbContain {
+	background: url(../images/bg_modalBox_bot.png) 0 bottom no-repeat;
+	padding: 10px 10px 5px;
+}
+div#mbContent {
+	position: relative;
+	max-height: 270px;
+	overflow: auto;
+}
+div#mbFooter {
+	padding: 10px 0 18px;
+	margin: 20px 15px 0 15px;
+	height: 25px;
+	border-top: 1px solid #ededed;
+}
+div#modalBox span.mapOptions {
+	display: none;
+}
+div#mbContent ul, div#mbContent ul li {
+	position: static;
+	float: none;
+	clear: none;
+}
+div#mbContent ul {
+	padding: 1.5em 0;
+}
+div#mbContent ul.featureOverview {
+	padding-top: 0;
+}
+div#mbContent ul.featureOverview li {
+	padding-top: .5em;
+	padding-left: 0;
+	background: none;
+}
+div#mbContent ul.featureOverview li img {
+	float: left;
+	margin-right: 5px;
+}
+div#mbContent h3 {
+	margin: .8em 15px 0;
+	font-size: 1.3em;
+}
+div#mbContent ul li {
+	list-style: none;
+	font-size: 1.2em;
+	position: static;
+	font-weight: normal;
+	padding-left: 20px;
+	padding-bottom: .5em;
+	background: url(../images/favicon.gif) 0 0 no-repeat;
+	margin: .5em 0;
+	line-height: 1.2em;
+}
+div#mbContent  ul li a {
+	font-weight: bold;
+	text-decoration: underline;
+}
+div#mbContent textarea, div#mbContent pre {
+	width: 405px;
+	font-size: 1.5em;
+	color: #ddd;
+	background: #444;
+	height: 150px;
+	padding: 15px;
+	line-height: 1.4;
+	margin: .5em 0 .5em 15px;
+	overflow: auto;
+}
+div#mbContent pre span.jsonLine {
+	display: block;
+}
+div#overlayScreen {
+	position: absolute;
+	top: 0;
+	z-index: 79000;
+}
+div#mbHeader h2, div#mbContent p, div#mbContent input, div#mbContent label, div#mbContent a, div#mbContent ul, div#mbContent textarea{
+	display: block;
+	margin: .2em 0;
+	float: none;
+	clear: both;
+}
+div#mbContent a {
+	display: inline;
+	clear: none;
+}
+div#mbContent ul, div#mbContent p {
+	margin: .2em 15px;
+	line-height: 1.2em
+}
+div#mbContent a {
+	text-decoration: underline;
+}
+div#mbContent p.choiceExplain {
+	margin-top: 1em;
+	font-size: 1.1em;
+	font-style: italic;
+}
+div#mbContent label {
+	font-size: 1.3em;
+	margin: 0 0 .4em 15px;
+	font-weight: bold;
+}
+div#mbContent label em {
+	display: block;
+	font-size: .8em;
+	font-weight: normal;
+	color: #aa0000;
+}
+div#mbContent input, div#mbContent input:focus, div#mbContent input.focus, div#mbContent textarea, div#mbContent textarea:focus, div#mbContent textarea.focus {
+	width: 20em;
+	font-size: 1.3em;
+	background: #fff;
+	border: 2px solid #ddd;
+	padding: .2em;
+	margin: 0 0 .4em 15px;
+}
+
+div#mbHeader h2 {
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 3em;
+	margin-top: .4em;
+	color: #555;
+}
+div#mbHeader a#mbClose {
+	position: absolute;
+	right: 15px;
+	top: 12px;
+	text-indent: -9000px;
+	width: 13px;
+	height: 13px;
+	background: url(../images/close.png) 0 0 no-repeat;
+	cursor: pointer;
+}
+a#mbCancel {
+	float: right;
+	background: #eee;
+	padding: .4em 1em;
+	font-size: 1.3em;
+	color: #333;
+	border: 1px solid #ddd;
+	margin-left: 10px;
+	cursor: pointer;
+}
+a#mbSave, a#saveAndNew, a#sharingToggle, a#sharingToggle_edit, #mbDelete {
+	float: right;
+	background: #3397d1;
+	padding: .4em 1em;
+	font-size: 1.3em;
+	color: #fff;
+	border: 1px solid #0a75bb;
+	margin-left: 10px;
+	cursor: pointer;
+}
+a#sharingToggle_edit {
+	background: #0a75bb;
+	border-color: #043657;
+}
+a#dontSaveAndNew {
+	float: right;
+	background: #aaa;
+	padding: .4em 1em;
+	font-size: 1.3em;
+	color: #222;
+	border: 1px solid #999;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+
+/*print mode elements*/
+#printHelper {
+	display: none;
+}
+
+.tail {
+	margin-left: -100px;
+	border: 0px !important;
+}
+
+
+.empty_piece {
+	width: 7.3em;
+	height: 8.9em;
+}
+
+#logo.print {
+	margin-top: 20px;
+	background-color: transparent;
+}
+
+/* -------- Comments begin -------- */
+
+.comments {
+	position: fixed;
+	width: 800px;
+	height: 500px;
+	background: #6BA700;
+	bottom: 0px;
+	right: -800px;
+	z-index: 1000;
+}
+
+.comments .head_title {
+	font-size: 24px;
+	color: white;
+	background: #78BA00;
+	width: 98%;
+	padding-left: 15px;
+	line-height: 45px;
+	margin-bottom: 10px;
+}
+
+.left_triangle {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 7px 14px 7px 0;
+	border-color: transparent #609600 transparent transparent;
+	margin-left: -16px;
+	margin-top: -1px;
+}
+
+.comment_from {
+	float: left;
+}
+
+div.message > .dialog {
+	background: #609600;
+	display: table;
+	padding: 6px;
+	color: white;
+	font-size: 10pt;
+	line-height: 12pt;
+	width: 640px;
+	float: right;
+}
+
+div.message {
+	position: relative;
+	margin-bottom: 14px;
+	margin-right: 13px;
+}
+
+.comment_from h3 {
+	margin-right: 15px;
+	color: white;
+	width: 90px;
+	font-size: 11pt;
+}
+
+.comment_add textarea {
+	height: 56px;
+	width: 100%;
+	resize: none;
+}
+
+.comment_add input[type="submit"] {
+	float: right;
+}
+
+.comments_list {
+	overflow: auto;
+	width: 100%;
+	height: 325px;
+}
+
+.comment_add {
+	width: 100%;
+}
+
+.message_footer, .message_delete a {
+	color: #AFCA7F !important;
+}
+
+.message_delete a:hover {
+	color: white !important;
+}
+
+.message_footer .message_time {
+	float: left;
+}
+
+.message_footer .message_delete {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.update_comments {
+	position: relative;
+	top: 7px;
+	right: 9px;
+	float:right;
+}
+/* -------- Comments end -------- */
+
+.outline .empty_piece {
+	width: 0px;
+	height: 0px;
+}
+
+.outline .tail {
+	width: 0px;
+	height: 0px;
+}
+.OutLineViewEDITOR{
+        top:1000px;
+	padding-top:10px;
+	margin-right: 140px;
+	width: 50%;
+	position: fixed;
+
+	right: 0;
+	z-index: 999;
+	height: auto;
+	display: none;
+        background-color: #F0F0F0;
+        border: 2px solid #ADA6A6;
+        border-radius: 10px;
+}
+
+.editor_page_name h1 {
+	margin-left: 20px;
+	font-size: 28px;
+	color: black;
+	width: 280px;
+/*	float: left;*/
+}
+.OutLineViewEDITOR select{
+/*	float: left;*/
+	margin-left: 50px;
+	margin-top: 10px;
+	margin-right: 100px;
+}
+.OutLineViewEDITOR p{
+	padding: 10px 10px 40px 10px;
+	font-size: 16px;
+	color: black;
+}
+
+.editor_page_url {
+	height: 25px;
+	width: 325px;
+	border: none;
+	font-size: 17px;
+        margin-left: 57px;
+        background:#F0F0F0;
+}
+.page_title_inp{
+        height: 25px;
+        width: 350px;
+        border: none;
+        font-size: 17px;
+        margin-top: 10px;
+        margin-left: 20px;
+        background: #F0F0F0;
+}
+.OutLineViewEDITOR h4 {padding-left: 15px;padding-bottom: 35px;} 
+
+/*.editor_page_note{
+        margin: 0px;
+        width: 671px;
+        height: 100px;
+        margin-top: 80px;
+        border: 3px solid #D7D7D7;
+        border-radius: 21px;
+        padding: 20px;
+}*/
+
+#accordion h3 {margin:2px 0 0 0 !important}
+#accordion .form_contain h3 {margin:0 !important }

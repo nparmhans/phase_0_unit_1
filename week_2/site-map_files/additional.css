@@ -1,0 +1,450 @@
+/* registation form begin */
+label {
+	font-size: 0.9em;
+	display: block;
+}
+
+label em {
+    display: block;
+    font-size: .8em;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.plan_name {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.registration_fieldset {
+	margin-top: 25px;
+}
+
+.registration_fieldset input[type="text"], .registration_fieldset input[type="password"] {
+	width: 225px;
+}
+
+.registration_fieldset select {
+	width: 235px;
+	background: white;
+	padding: 7px 0 7px 7px;
+	border-color: #ccc #efefef #efefef #ccc;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.registration_fieldset select.half {
+	width: 112px;
+}
+
+input[type="submit"].register {
+	font-size: 17px;
+	font-weight: bold;
+	padding: 8px 14px 8px;
+	color: white;
+	background-color: #2CB2E7;
+	border: 1px solid #28A0D0;
+	border-radius: 6px;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28),inset 1px 0 0 rgba(255, 255, 255, 0.1),inset -1px 0 0 rgba(255, 255, 255, 0.1),inset 0 -2px 1px rgba(0, 0, 0, 0.35);
+	margin-top: 10px;
+}
+
+.registration_errors {
+	color: red;
+	margin: 5px 0 0 0;
+}
+/* registation form end */
+
+/* login popup begin */
+/* Mask for background, by default is not display */
+#mask {
+	display: none;
+	background: #000;
+	position: fixed; left: 0; top: 0;
+	z-index: 10;
+	width: 100%; height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+#auto_login {
+	width: 13px;
+	top: -1px;
+	position: relative;
+	float: right;
+}
+
+/* You can customize to your needs  */
+.login-popup{
+	display:none;
+	background: #333;
+	padding: 10px;
+	border: 2px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999; /* CSS3 */
+	-moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+	-webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+	-moz-border-radius: 3px; /* Firefox */
+	-webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+img.btn_close {
+	float: right;
+	margin: -28px -28px 0 0;
+}
+
+fieldset {
+	border:none;
+}
+
+form.signin .textbox label {
+	display:block;
+	padding-bottom:7px;
+}
+
+form.signin .textbox span {
+	display:block;
+}
+
+form.signin p, form.signin span {
+	color:#999;
+	font-size:11px;
+	line-height:18px;
+}
+
+form.signin .textbox input {
+	background:#666666;
+	border-bottom:1px solid #333;
+	border-left:1px solid #000;
+	border-right:1px solid #333;
+	border-top:1px solid #000;
+	color:#fff;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font:13px Arial, Helvetica, sans-serif;
+	padding:6px 6px 4px;
+	width:200px;
+}
+
+form.signin input:-moz-placeholder { color:#bbb; text-shadow:0 0 2px #000; }
+form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #000;  }
+
+.button {
+	background: -moz-linear-gradient(center top, #2CB2E7, #2CB2E7);
+	background: -webkit-gradient(linear, left top, left bottom, from(#2CB2E7), to(#2CB2E7));
+	background:  -o-linear-gradient(top, #2CB2E7, #2CB2E7);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#2CB2E7', EndColorStr='#2CB2E7');
+	border-color:#000;
+	border-width:1px;
+	border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	display:inline-block;
+	padding:6px 6px 4px;
+	margin-top:10px;
+	font:12px;
+	width:214px;
+}
+.button:hover { background:#28A0D0; }
+/* login popup end */
+
+.registered_users {
+    color: #E4E4E4;
+    text-align: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.writemaps_hover.archive  {
+    position: absolute;
+    margin-left: -78px !important;
+}
+
+.writemaps_hover {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+	/*    margin-left: -99px !important;*/
+}
+
+.writemaps_hover li {
+    display: inline;
+	cursor: pointer;
+}
+
+#mapNames.archive ul  {
+	/*    margin-left: 40px;*/
+}
+
+#mapNames ul {
+	/*    margin-left: 62px;*/
+}
+
+.delete_writemap {
+    width: 16px;
+    height: 16px;
+    background: url(../images/Trash-can-icon.png) 0 0 no-repeat !important;
+}
+
+.rename_writemap {
+    width: 16px;
+    height: 16px;
+    background: url(../images/pencil.png) 0 0 no-repeat !important;
+}
+
+.change_position_writemap {
+    width: 16px;
+    height: 16px;
+    background: url(../images/up-down-arrow.png) 0 0 no-repeat !important;
+}
+
+.archive_writemap {
+    width: 16px;
+    height: 16px;
+    background: url(../images/document-archive-icon.png) 0 0 no-repeat !important;
+}
+
+.duplicate_writemap {
+	width: 16px;
+    height: 16px;
+    background: url(../images/Document-Copy-icon.png) 0 0 no-repeat !important;
+}
+
+.unarchive_writemap {
+	width: 16px;
+    height: 16px;
+    background: url(../images/unarchive.gif) 0 0 no-repeat !important;
+}
+
+.archive_writemap {
+	width: 16px;
+    height: 16px;
+    background: url(../images/archive.gif) 0 0 no-repeat !important;
+}
+
+.hidden {
+	display: none;
+}
+
+.up-down-arrow {
+	width: 12px;
+	height: 12px;
+}
+
+.sidebar_widget .title
+{
+	font-size: 18px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	font-weight: bold;
+	color: #444;
+	letter-spacing: -1px;
+}
+
+.sidebar_widget {
+
+/*	width: 475px;*/
+	margin: 0 30px 30px 0;
+/*	float: right;*/
+}
+
+.users_say_block span {
+   font-size: 18px;
+}
+.users_say_block{
+    width: 400px;
+}
+.users_say_block img{
+
+    float: right;
+
+}
+.au_block{float: right;}
+
+.au_2{padding-top: 38px;}
+.users_say_block_left{float:left;}
+.users_say_block_right{float:right;}
+.sidebar_widget .title{text-align: center;}
+
+/* what users say widget begin */
+.users_say h3 {
+	float: right;
+}
+
+.users_say p {
+        font-style: italic;
+
+	clear: both;
+}
+
+.users_say .company_logo {
+	margin-left: 14px;
+	margin-bottom: 20px;
+}
+/* what users say widget end */
+
+legend {
+	font-size: 1.5em;
+	margin-bottom: 9px;
+}
+
+.relative {
+	position: relative;
+}
+
+/*Pricing start*/
+
+.price_block {
+	float:left;
+	width: 230px;
+	margin-right: 25px;
+	text-align: center;
+}
+
+.price_block .box {
+	background-color: #E9ECED;
+	height: 335px;
+	box-shadow: 1px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.price_block .box h2.free {
+	background: #74A6D5;
+}
+
+.price_block .box h2.pro {
+	background: #3FB9C0;
+}
+
+.price_block .box h2.premium {
+	background: #E2505B;
+}
+
+.price_block .box h2 {
+	height: 50px;
+	line-height: 50px;
+	color: white;
+}
+
+.price_block .box h3.price {
+	line-height: 44px;
+	font-size: 44px;
+	height: 44px;
+	margin-top: 25px;
+}
+
+.price_block .box p.price_desc {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.price_blocks_holder {
+	margin: auto;
+	width: 770px;
+	margin-top: 25px;
+}
+
+.price_block .box .register {
+	font-size: 17px;
+	font-weight: bold;
+	padding: 11px 17px 9px;
+	color: white;
+	background-color: #2CB2E7;
+	border: 1px solid #28A0D0;
+	border-radius: 6px;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28),inset 1px 0 0 rgba(255, 255, 255, 0.1),inset -1px 0 0 rgba(255, 255, 255, 0.1),inset 0 -2px 1px rgba(0, 0, 0, 0.35);
+	margin-top: 25px;
+}
+
+.price_block .box .register.paid {
+	background-color: #7DB347;
+	border: 1px solid #71A140;
+}
+
+.price_block .box .short_desc {
+	margin-top: 40px;
+}
+
+.plan_desc {
+	position: absolute;
+	margin-top: -207px;
+	margin-left: -85px;
+}
+
+.price_block > p, .plan_desc > p {
+	border-bottom: 1px dotted #CCC;
+	font-size: 13px;
+	line-height: 16px;
+	padding: 20px;
+}
+
+.plan_desc > p {
+	border-bottom: 0px;
+}
+
+.price_block > p:last-child {
+	border-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+/*Pricing end*/
+.sec{
+    text-align: center;
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+.sec_bot {
+    font-size: 32px;
+    padding-top:10px;
+    text-align: center;
+    padding-bottom:10px;
+}
+
+.public_registration {
+
+    width:400px;
+    margin: 0 auto;
+}
+
+.public_registration ul div label {
+
+    float: left;
+
+}
+.public_registration ul div input {
+
+    float: right;
+
+}
+
+.public_registration ul div select {
+    margin-left: 4px;
+    margin-right: 4px;
+    float: right;
+
+}
+.public_registration ul div  {
+
+    width: 400px;
+    height: 50px;
+
+}
+.public_registration .register {
+
+    float: right;
+}
+.half_w {width: 600px;}
+/*#sidebar {display: none;}*/
+/*.fr{display: none;}*/
+.catrss{display: none;}
+
+legend{margin-bottom: 55px;}

@@ -1,0 +1,37 @@
+@media all
+{
+	#jPicker { margin: 0px 8px; text-align: left; }
+	#jPicker ul { font-size: 15px; margin: 0px 0px 0px 15px; padding: 0px; }
+	#jPicker ul li { list-style: disc; padding: 2px 0px; }
+	#jPicker ul li ul { margin-bottom: 10px; }
+	#jPicker ul li ul li { list-style: circle; }
+	#jPicker p { font-size: 13px; padding: 0px 10px; }
+	#jPicker hr { clear: both; }
+	#jPicker h2.jPicker { font-size: 16px; padding: 20px 10px; }
+	#jPicker code { color: #8bd; font-size: 14px; font-weight: bold; }
+	#jPicker pre { background: #eee; border: 1px solid #000; color: #000; display: block; font-size: 11px; margin: 10px 5px; padding: 5px; }
+	#jPicker span { font-size: 13px; text-align: center; }
+	#jPicker a { color: #ff8050; }
+	#jPicker input { font-size: 13px; padding: 2px 5px; }
+	#jPicker h2 { font-size: 16px; margin: 10px 0px; }
+}
+
+.map .backgrount-img-map{
+    height: 7.8em;
+    width: 6.4em;
+    position: absolute;
+    top: 0.3em;
+    left: 1.6em;
+    border-radius: 1em 4em 1em 1em;
+    background-color: rgb(252, 251, 245);
+    z-index: 0;
+}
+.outline .backgrount-img-map{
+    height: 2.6em;
+    width: 2.2em;
+    position: absolute;
+    top: -0.35em;
+    left: -1em;
+    border-radius: 1em 3em 1em 1em;
+    background-color: rgb(252, 251, 245);
+}

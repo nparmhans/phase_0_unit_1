@@ -1,0 +1,277 @@
+/*--------------------------------------------------------------------------------
+WriteMaps Application presentation Layer for Print
+Author: Scott Jehl
+Updated: April 08
+Notes: Cascades off of the main application css
+--------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------
+Global Styles
+------------------------------------------------------------------*/
+body {
+	background: #fff !important;
+	margin: 0;
+}
+@media screen {
+
+	body{ padding-top: 22em;
+	}
+	#printHelper {
+		display: block !important;
+		z-index: 0;
+		margin: 10px;
+	}
+	#printControls {
+		background: #f6f6f6;
+		padding: 20px 20px 0px 20px;
+		border: 1px solid #ccc;
+	}
+	#printControls h2 {
+		font-size: 1.2em;
+		float: none;
+		color: #222;
+		margin: 0;
+		padding:0;
+		font-weight: bold;
+		line-height: 1.5;
+	}
+	#printControls p {
+		font-size: 1.2em;
+		line-height: 1.5;
+		color: #222;
+		width: 480px;
+		margin: 0 0 .5em 0;
+		padding: 0;
+	}
+	#printControls form {
+		padding: .8em 0 0;
+	}
+	#printControls label {
+		color: #333;
+		font-weight: bold;
+		font-size: 1.1em;
+	}
+	#printControls input, #printControls input:focus {
+		border: 1px solid #333;
+		text-align: left;
+		margin: 0 15px 0 0;
+		width: 3em;
+		padding: .3em;
+		font-size: 1.1em;
+	}
+
+	#printControls a#closePrintView{
+		float: left;
+		background: #eee;
+		padding: .4em 1em;
+		font-size: 1.3em;
+		color: #333;
+		border: 1px solid #ddd;
+		margin: 20px 0 0;
+		cursor: pointer;
+	}
+	#printControls  a#printPrintView {
+		float: left;
+		background: #3397d1;
+		padding: .4em 1em;
+		font-size: 1.3em;
+		color: #fff;
+		border: 1px solid #0a75bb;
+		margin: 20px 20px 0 0;
+		cursor: pointer;
+	}
+
+	#printCrop {
+		position: absolute;
+		top: 25em;
+		width: 7in;
+		height: 9in;
+		left: 1em;
+		border: 1px dotted red;
+		cursor: move;
+	}
+
+}
+
+
+/*------------------------------------------------------------------
+Hidden Elements
+------------------------------------------------------------------*/
+#logo,
+.wrapper,
+.headline_mapbuilder,
+.comments,
+ul#appNav,
+div#viewToggles,
+div#modeToggles,
+div#zoomTool,
+p#userMsg,
+ul#wmInfo,
+a.toggleSection,
+a.sectionCol,
+div.page_meta,
+a.addPage,
+a.deleteThis,
+a.metaToggle,
+.headwelcome {
+	display: none !important;
+}
+
+@media screen {
+	div#zoomTool {
+		position: absolute;
+		left: 41em;
+		top: 12.8em;
+		display: block !important;
+		z-index: 9999999999;
+		background: none;
+
+	}
+	div#zoomTool h3 {
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+}
+
+
+/*------------------------------------------------------------------
+Header Styles
+------------------------------------------------------------------*/
+h1 {
+	margin: 10px 20px;
+	float: left;
+	width: 100px;
+	height: 20px;
+	margin-top: 29px;
+}
+h1 img {
+	max-width: 100px;
+	max-height: 30px;
+}
+h2 {
+	float: left;
+	margin: 4px;
+	padding-left: 15px;
+	font-size: 1em;
+	line-height: 10px;
+	margin-top: -50px;
+}
+
+/*------------------------------------------------------------------
+Application Canvas Styles
+------------------------------------------------------------------*/
+div#canvas {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+@media screen {
+	div#canvas {
+		margin: 10px 0;
+	}
+}
+div.canvasWrap {
+	background: none;
+	padding: 0;
+}
+#viewPort {
+	overflow: visible;
+	padding: 0;
+	height: auto;
+	width: auto;
+	border-top: 1px solid #ddd;
+}
+
+
+/*------------------------------------------------------------------
+Application SiteMap Styles
+------------------------------------------------------------------*/
+div.map, div.outline {
+	background: #fff !important;
+}
+form {
+	margin: 0;
+	height: auto;
+}
+fieldset {
+
+	height: auto;
+	left: auto;
+}
+div.map div.safariWipe, div.outline div.safariWipe {
+	border-top: .4em solid #fff !important;
+	border-bottom: .8em solid #fff !important;
+	border-left: .6em solid #fff !important;
+	border-right: .9em solid #fff !important;
+}
+/*------------------------------------------------------------------
+Structure Styles
+------------------------------------------------------------------*/
+ul#sitemap {
+	float: none;
+	padding: 30px;
+	position: relative;
+}
+div.map div.pageContain,
+div.outline div.pageContain {
+	display: block;
+	background: #fff !important;
+}
+div.map li li div.first div.vLine div.line,
+div.map li li div.last div.vLine div.line,
+div.map li div.solo div.vLine div.line,
+div.outline li li div.first div.vLine div.line,
+div.outline li li div.last div.vLine div.line,
+div.outline li div.solo div.vLine div.line {
+	background: #fff;
+}
+
+
+/*------------------------------------------------------------------
+Inner Page Element Styles: Map View
+------------------------------------------------------------------*/
+div.map input.titleText,
+div.outline input.titleText {
+	background: #fff !important;
+	color: #000;
+}
+input.defaultText {
+	color: #666;
+}
+input:focus, input.focus {
+	background: #fff important;
+	border: 0;
+	z-index: 51000;
+}
+div.safariWipe {
+	border-color: #fff;
+}
+
+/*------------------------------------------------------------------
+Footer Styles
+------------------------------------------------------------------*/
+div#footer {
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	border-top: 1px solid #ddd;
+	padding-top: 5px;
+	display: none;
+}
+
+.printHolder {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#printHelper form {
+	margin: 3em 3em 3em 3em;
+}
+
+h1 {
+	background-color: none !important;
+}
